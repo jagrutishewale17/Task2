@@ -1,0 +1,149 @@
+body{
+    font-family: "Poppins", sans-serif;
+    background-color: rgb(247, 241, 241);
+}
+:root {
+    --primary-color: rgb(174, 64, 248);
+    --primary-color-dark: rgb(117, 15, 184);
+    --text-dark: #1f2937;
+    --text-light: #5e6b86;
+    --max-width:1200px;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+/* navigation bar */
+nav{
+    width: 100%;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.nav_elements{
+    max-width: var(--max-width);
+    padding: 1.5rem 5rem;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav_elements a{
+    color: var(--primary-color-dark);
+    font-size: 22px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+nav .checkbox {
+    display: none;
+}
+nav input {
+    display: none;
+}
+nav .checkbox i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    cursor: pointer;
+} 
+.nav_list{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    transition: left 0.3s;
+}
+.nav_item{
+    font-size: 16px;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.nav_item:hover{
+    color:var(--primary-color-dark);
+}
+/*======= hero section=====*/
+.hero_section{
+    min-height: 60vh;
+    padding: 5rem 5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 5rem;
+}
+.Description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.subtitle{
+    letter-spacing: 2px;
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 0rem;
+    color: var(--text-light);
+}
+.title{
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 3rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+.title span{
+    font-weight: 600;
+}
+.summery{
+    color: var(--text-light);
+    font-size: large;
+}
+.my_img{
+    display: grid;
+    place-content: center;
+    margin-left: 10rem;
+}
+.my_img img {
+    width: min(20rem, 90%);
+    border-radius: 100%;
+}
+.about{
+    background-color: white;
+}
+@media (width < 700px) {
+nav .checkbox {
+    display: block;
+}
+    ul {
+      position: absolute;
+      width: 100%;
+      height: calc(100vh - 85px);
+      left: -100%;
+      top: 85px;
+      background-color: #ffffff;
+      flex-direction: column;
+      justify-content: center;
+      gap: 3rem;
+    }
+  
+    nav #check:checked ~ ul {
+      left: 0;
+    }
+  
+    ul li p {
+      font-size: 1.25rem;
+    }
+  
+    .hero_section{
+      padding: 6rem 1rem 5rem 1rem;
+      text-align: center;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  
+    .my_img {
+      grid-area: 1/1/2/2;
+      margin-left: 4rem;
+    }
+  }
